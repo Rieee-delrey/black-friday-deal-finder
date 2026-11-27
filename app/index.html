@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound — Black Friday 2026, real deals checked today</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <p class="kicker">Black Friday 2026 &middot; checked today, 27 Nov 2026</p>
+  <h1>DealHound</h1>
+  <p class="tagline">Real Black Friday deals, checked by hand today. Every price was read in a named source, every discount is computed from the listed prices, and every verdict says plainly whether it is really a deal.</p>
+  <p class="stats"><strong>35 deals</strong> &middot; <strong>7 stores</strong> &middot; <strong>9 categories</strong> &middot; <strong>6 new lows</strong></p>
+  <p class="how"><a href="#how">How we check &darr;</a> &nbsp;&middot;&nbsp; <a href="#compare">Same product, compared &darr;</a> &nbsp;&middot;&nbsp; <a href="#rejected">Checked and rejected &darr;</a></p>
+</header>
+
+<main id="board">
+  <section class="controls" aria-label="Find deals">
+    <label>Search <input id="search" type="search" placeholder="Try: AirPods, TV, Dyson&hellip;" autocomplete="off"></label>
+    <label>Category
+      <select id="category"><option value="">All categories</option></select>
+    </label>
+    <label>Store
+      <select id="store"><option value="">All stores</option></select>
+    </label>
+    <label>At least
+      <select id="discount">
+        <option value="0" selected>Any discount</option>
+        <option value="25">25% off</option>
+        <option value="40">40% off</option>
+        <option value="50">50% off</option>
+      </select>
+    </label>
+    <label>Verdict
+      <select id="verdict">
+        <option value="">Any verdict</option>
+        <option value="NEW LOW">New low</option>
+        <option value="STRONG">Strong</option>
+        <option value="FAIR">Fair</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="best" selected>Best deals first</option>
+        <option value="discount">Biggest discount</option>
+        <option value="saved">Most dollars saved</option>
+        <option value="price">Lowest price</option>
+      </select>
+    </label>
+    <p id="count-line" class="count" aria-live="polite"></p>
+  </section>
+
+  <section id="grid" class="grid" aria-label="Deals"></section>
+
+  <section id="compare" class="panel">
+    <h2>Same product, compared across stores</h2>
+    <p>Where two stores sell the same thing, we show both prices. The cheapest wins; the rest is noise.</p>
+    <div id="compare-rows"></div>
+  </section>
+
+  <section id="rejected" class="panel rejected-panel">
+    <h2>Checked and rejected</h2>
+    <p>These looked like deals and are not. They stay on the board so you can see the work.</p>
+    <div id="rejected-rows"></div>
+  </section>
+
+  <section id="how" class="panel">
+    <h2>How we check</h2>
+    <ol>
+      <li>We read the price at the store or in a deals source that names the store, and write down when and where.</li>
+      <li>The discount is computed from the two prices shown: sale price against the list price. If they do not add up, the deal does not go up.</li>
+      <li>Verdict: <strong>NEW LOW</strong> means the cheapest price we can verify anywhere; <strong>STRONG</strong> means a big real cut; <strong>FAIR</strong> means a real cut, but small or seen before; <strong>SKIP</strong> means it is not a deal.</li>
+      <li>Prices move. Check the store link before you buy. This board was checked 27 Nov 2026.</li>
+    </ol>
+    <p id="checked-line"></p>
+  </section>
+</main>
+
+<main id="detail" hidden></main>
+
+<footer>
+  <p>DealHound &middot; Black Friday 2026 &middot; an independent board, not affiliated with any store named here. Prices change; confirm at the store before buying.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
